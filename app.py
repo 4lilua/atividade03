@@ -6,7 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK+MODIFICATIONS'] = False
 from database import db
 from flask_migrate import Migrate
-from models import Autor, Livro
+from models import Autores, Livros
 db.init_app(app)
 migrate = Migrate(app, db)
 

@@ -1,6 +1,6 @@
 from database import db
 
-class Autor(db.Model):
+class Autores(db.Model):
     __tablename__ = 'autor'
     id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(100))
@@ -13,14 +13,14 @@ class Autor(db.Model):
     def __repr__(self):
         return "<Autor {}>".format(self.nome)
 
-class Livro(db.Model):
+class Livros(db.Model):
     __tablename__ = 'livro'
     id = db.Column(db.Integer, primary_key = True)
     titulo = db.Column(db.String(100))
     ano_publicacao = db.Column(db.Integer)
     autor_id = db.Column(db.Integer, db.ForeignKey('autor.id'))
 
-    autor = db.relationship('Autor', foreign_keys=autor_id)
+    autor = db.relationship('autor', foreign_keys=autor_id)
 
     def __init__(self, titulo, ano_publicacao, autor_id):
         self.titulo = titulo

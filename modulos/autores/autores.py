@@ -1,12 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, flash
-from models import Autor
+from models import Autores
 from database import db
 
 bp_autor = Blueprint('autores', __name__, template_folder="templates")
 
 @bp_autor.route('/')
 def index():
-    dados = Autor.query.all()
+    dados = Autores.query.all()
     return render_template('autor.html', autores = dados)
 
 @bp_autor.route('/add')
@@ -18,7 +18,7 @@ def save():
     nome = request.form.get('nome')
     nacionalidade = request.form.get('nacionalidade')
     if nome and nacionalidade:
-        db_autor = Autor(nome, nacionalidade)
+        db_autor = Autores(nome, nacionalidade)
         db.session.add(db_autor)
         db.session.commit()
         flash('Autor salvo com sucesso!!!')
