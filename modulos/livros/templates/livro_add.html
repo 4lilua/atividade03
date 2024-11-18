@@ -20,8 +20,12 @@
             <input type="number" name="ano_publicacao" id="ano_publicacao">
         </div>
         <div>
-            <label for="autor_id">Id do autor: </label>
-            <input type="number" name="autor_id" id="autor_id">
+            <label for="autor_id">Autor: </label>
+            <select id="autor_id" name="autor_id" required>
+                {% for a in autores %}
+                    <option value="{{a.id}}">{{a.nome}}</option>
+                {% endfor %}
+            </select>
         </div>
         <button type="submit">Salvar</button>
     </form>

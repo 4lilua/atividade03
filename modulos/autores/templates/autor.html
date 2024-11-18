@@ -16,11 +16,49 @@
         <tr>
             <th>Nome</th>
             <th>Nacionalidade</th>
+            <th>Edita</th>
+            <th>Remove</th>
         </tr>
         {% for a in autores %}
         <tr>
             <td>{{a.nome}}</td>
             <td>{{a.nacionalidade}}</td>
+            <td><a href="/autores/edita/{{a.id}}">Editar</a></td>
+            <td><a href="/autores/remove/{{a.id}}">Remover</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div>
+        <a href="/autores/add">Adicionar</a>
+    </div>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Nacionalidade</th>
+            <th>Edita</th>
+            <th>Remove</th>
+        </tr>
+        {% for p in pacientes %}
+        <tr>
+            <td>{{p.nome}}</td>
+            <td>{{p.idade}}</td>
+            <td><a href="/pacientes/edita/{{p.id}}">Editar</a></td>
+            <td><a href="/pacientes/remove/{{p.id}}">Remover</a></td>
         </tr>
         {% endfor %}
     </table>

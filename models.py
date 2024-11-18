@@ -20,7 +20,7 @@ class Livros(db.Model):
     ano_publicacao = db.Column(db.Integer)
     autor_id = db.Column(db.Integer, db.ForeignKey('autor.id'))
 
-    autor = db.relationship('autor', foreign_keys=autor_id)
+    autor = db.relationship('Autores', foreign_keys=autor_id)
 
     def __init__(self, titulo, ano_publicacao, autor_id):
         self.titulo = titulo
@@ -28,5 +28,4 @@ class Livros(db.Model):
         self.autor_id = autor_id
 
     def __repr__(self):
-        return "<Livro {} - Autor {}>".format(self.titulo, self.autor_id)
-
+        return "<Livro {}>".format(self.titulo)

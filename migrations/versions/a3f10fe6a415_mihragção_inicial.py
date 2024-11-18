@@ -1,8 +1,8 @@
-"""Create Table Autores e Livros
+"""Mihragção Inicial
 
-Revision ID: 9beea96a3f8c
+Revision ID: a3f10fe6a415
 Revises: 
-Create Date: 2024-11-18 12:56:15.149031
+Create Date: 2024-11-18 14:30:12.650380
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9beea96a3f8c'
+revision = 'a3f10fe6a415'
 down_revision = None
 branch_labels = None
 depends_on = None
