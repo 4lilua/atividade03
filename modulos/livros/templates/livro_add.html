@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block conteudo %}
+    {% set mensagens  = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form action="/livros/save" method="post">
+        <div>
+            <label for="titulo">Título: </label>
+            <input type="text" name="titulo" id="titulo">
+        </div>
+        <div>
+            <label for="ano_publicacao">Ano de publicação: </label>
+            <input type="number" name="ano_publicacao" id="ano_publicacao">
+        </div>
+        <div>
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" id="preco">
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}
