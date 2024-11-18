@@ -26,3 +26,36 @@ def save():
     else:
         flash('Preencha todos os campos!!!')
         return redirect('/autores/add')
+
+@bp_autor.route("/remove/<int:id>")
+def remove(id):
+    dados = Autores.query.get(id)
+    if id > 0:
+        db.session.delete(dados)
+        db.session.commit()
+        flash('Autor removido com sucesso!')
+        return redirect("/autores")
+    else:
+        flash("Caminho incorreto!")
+        return redirect("/autores")
+
+@bp_autor.route("/edita/<int:id>")
+def edita(id):
+    autor = Autores.query.get(id)
+    return render_template("autor_edita.html", dados=autor)
+
+@bp_autor.route("/editasave", methods=['POST'])
+def editasave():
+    id = request.form.get('id')
+    nome = request.form.get('nome')
+    nacionalidade = request.form.get('nacionalidade')
+    if id and nome and nacionalidade:
+        livro = Autores.query.get(id)
+        livro.nome = nome
+        livro.nacionalidade = nacionalidade
+        db.session.commit()
+        flash('Dados atualizados com sucesso!')
+        return redirect('/autores')
+    else:
+        flash('Dados incompletos.')
+        return redirect("/autores")

@@ -11,11 +11,15 @@
     --vermelho: #af0000;
 }
 
-header{
-    height: 10rem;
-    background-image: url('/static/pizza2.jpg');
-    background-size: cover;
+.banner{
     height: 8rem;
+    background-color: #5367fd;
+    background-size: cover;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
 }
 
 .banner_text{
@@ -28,11 +32,12 @@ header{
 
 .links_nav{
     background-image: radial-gradient(#af0000, #ffffff);
-    padding-left: 42rem;
-    padding-right: 42rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
     height: 2.2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .links_nav a{
@@ -43,9 +48,8 @@ header{
     align-items: center;
 }
 
-main{
-    background-color: var(--white);
-    min-height: calc(100vh - 12.2rem);
+main{background-color: var(--white);
+    min-height: calc(100vh - 7.2rem);
     background-size: auto;
 }
 
