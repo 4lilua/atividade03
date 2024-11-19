@@ -8,32 +8,47 @@
 :root {
     --black: #000;
     --white: #fff;
-    --vermelho: #af0000;
+    --rosa: #fa8acf;
+    --rosa2: #ffdef3;
+    --rosa3: #fcbee4;
+    --rosa4: #ff009d;
 }
 
-.banner{
+header{
     height: 8rem;
-    background-color: #5367fd;
-    background-size: cover;
+    background-color: var(--rosa);
+    background-size: auto;
+    opacity: 80%;
+}
+
+header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+header img{
+    width: 5rem;
+}
+
+header h1{
+    padding-left: 1rem;
+    color: var(--white);
+    text-shadow: 2px 2px var(--black);
 }
 
 .inicio{
     display: flex;
     justify-content: center;
-}
-
-.banner_text{
-    text-shadow: 2px 2px var(--black);
-    color: var(--white);
-    text-align: center;
     padding-top: 2rem;
-    font-size: 2.3rem;
 }
 
 .links_nav{
-    background-image: radial-gradient(#af0000, #ffffff);
-    padding-left: 30rem;
-    padding-right: 30rem;
+    background-image: radial-gradient(#ff66c4, #ffffff);
+    text-shadow: 1px 1px var(--black);
+    padding-left: 35rem;
+    padding-right: 35rem;
     height: 2.2rem;
     display: flex;
     justify-content: space-between;
@@ -48,33 +63,29 @@
     align-items: center;
 }
 
-main{background-color: var(--white);
-    min-height: calc(100vh - 7.2rem);
+main{
+    padding-top: 6.5rem;
+    background-color: var(--rosa2);
+    background-image: url("../imagens/estrelas.gif");
+    min-height: calc(100vh - 13.2rem);
     background-size: auto;
 }
 
-main section{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.main{
+    display: block;
     justify-content: center;
-    font-size: 2rem;
-    padding-top: 2rem;
-}
-
-main section img{
-    height: 5rem;
-    width: 5rem;
-}
-
-.img2{
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 30rem;
-    width: 30rem;
 }
 
+.main section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main img{
+    width: 18rem;
+}
 
 /* Formulários */
 
@@ -148,40 +159,39 @@ button:hover{
 
 /* Tabelas */
 
-a, input{
-    display: block;
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
 
-img{
-    width: 250px;
+.add a{
+    text-decoration: none;
+    color: var(--black);
+    padding-right: 0.2rem;
+    font-size: 2rem;
+}
+
+.add img{
+    width: 4rem;
 }
 
 table, tr, td, th{
-    border: 1px solid black;
+    border: 1.5px solid var(--black);
     border-collapse: collapse;
-    padding: 5px ;
+    background-color: var(--rosa3);
+    padding: 0.7rem ;
+
 }
 
 table{
     margin: auto;
 }
 
-.add{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3rem;
-}
-
-.add a{
-    text-decoration: none;
-    color: var(--black);
-    font-size: 1.5rem;
-}
-
 table tr td a{
     text-decoration: none;
-    color: #152cd5;
+    color: var(--rosa4);
 }
 
 .msn{
@@ -193,10 +203,13 @@ table tr td a{
 }
 
 footer{
-    background-image: radial-gradient(#af0000, #ffffff);
+    background-image: radial-gradient(#ff66c4, #ffffff);
     height: 3rem;
     color: var(--white);
+    text-shadow: 0.5px 0.5px var(--black);
     font-size: 1.7rem;
     align-items: center;
+    justify-content: end;
+    padding-right: 4rem;
     display: flex;
 }

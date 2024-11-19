@@ -8,18 +8,16 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="banner"></div>
-            <div class="banner_text">
-                <h1></h1>
-            </div>
-            <div class="links_nav">
-                <a href="/">Inicio</a>
-                <a href="/autores">Autores</a>
-                <a href="/livros">Livros</a>
-            </div>
-        </nav>
+        <div>
+            <a href="/"><img src="../static/imagens/hello_kitty.png" alt="hello_kitty"></a>
+            <h1>Autores e Livros</h1>
+        </div>
+
     </header>
+    <div class="links_nav">
+        <a href="/autores"><b>Autores</b></a>
+        <a href="/livros"><b>Livros</b></a>
+    </div>
     <main>
         <div class="conteudo">
             {% block conteudo %}
