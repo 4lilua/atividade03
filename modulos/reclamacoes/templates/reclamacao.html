@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block conteudo %}
+    {% set mensagens  = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="add">
+        <button class="bt_add"><a href="/reclamacoes/add">Adicionar</a></button>
+    </div>
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Cliente</th>
+            <th>Remove</th>
+        </tr>
+        {% for r in reclamacoes %}
+        <tr>
+            <td>{{r.descricao}}</td>
+            <td>{{r.data}}</td>
+            <td>{{r.id_cliente}}</td>
+            <td class="lixeira"><a href="/livros/remove/{{l.id}}"><img src="../static/imagens/lixeira.png" alt="lixeira"></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

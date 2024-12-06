@@ -1,20 +1,20 @@
 from flask import Flask, render_template, request, flash, redirect, Blueprint
 app=Flask(__name__)
 app.config['SECRET_KEY'] = 'sTriNgqUeniNguEmsAbe'
-conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/bim3_g2"
+conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/prova_bim3_g2"
 app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK+MODIFICATIONS'] = False
 from database import db
 from flask_migrate import Migrate
-from models import Autores, Livros
+from models import Clientes, Reclamacoes
 db.init_app(app)
 migrate = Migrate(app, db)
 
-from modulos.autores.autores import bp_autor
-app.register_blueprint(bp_autor, url_prefix = '/autores')
+from modulos.clientes.clientes import bp_cliente
+app.register_blueprint(bp_cliente, url_prefix = '/clientes')
 
-from modulos.livros.livros import bp_livro
-app.register_blueprint(bp_livro, url_prefix = '/livros')
+from modulos.reclamacoes.reclamacoes import bp_reclamacao
+app.register_blueprint(bp_reclamacao, url_prefix = '/reclamacoes')
 
 @app.route('/')
 def index():

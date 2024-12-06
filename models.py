@@ -1,31 +1,31 @@
 from database import db
 
-class Autores(db.Model):
-    __tablename__ = 'autor'
+class Clientes(db.Model):
+    __tablename__ = 'cliente'
     id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(100))
-    nacionalidade = db.Column(db.String(50))
+    telefone = db.Column(db.String(15))
 
-    def __init__(self, nome, nacionalidade):
+    def __init__(self, nome, telefone):
         self.nome = nome
-        self.nacionalidade = nacionalidade
+        self.telefone = telefone
 
     def __repr__(self):
-        return "<Autor {}>".format(self.nome)
+        return "<Cliente: {}>".format(self.nome)
 
-class Livros(db.Model):
-    __tablename__ = 'livro'
+class Reclamacoes(db.Model):
+    __tablename__ = 'reclamacao'
     id = db.Column(db.Integer, primary_key = True)
-    titulo = db.Column(db.String(100))
-    ano_publicacao = db.Column(db.Integer)
-    autor_id = db.Column(db.Integer, db.ForeignKey('autor.id'))
+    descricao = db.Column(db.String(225))
+    data = db.Column(db.Date)
+    id_cliente = db.Column(db.Integer, db.ForeignKey('cliente.id'))
 
-    autor = db.relationship('Autores', foreign_keys=autor_id)
+    autor = db.relationship('Clientes', foreign_keys=id_cliente)
 
-    def __init__(self, titulo, ano_publicacao, autor_id):
-        self.titulo = titulo
-        self.ano_publicacao = ano_publicacao
-        self.autor_id = autor_id
+    def __init__(self, descricao, data, id_cliente):
+        self.descricao = descricao
+        self.data = data 
+        self.id_cliente = id_cliente
 
     def __repr__(self):
-        return "<Livro {}>".format(self.titulo)
+        return "<Reclamação: {}>".format(self.descricao)

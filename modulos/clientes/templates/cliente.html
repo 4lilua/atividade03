@@ -11,22 +11,17 @@
             {% endfor %}
     {% endif %}
     <div class="add">
-        <a href="/autores/add">Adicionar</a>
-        <img src="../static/imagens/dog_bubble.png" alt="dog">
+        <button class="bt_add"><a href="/clientes/add">Adicionar</a></button>
     </div>
     <table>
         <tr>
             <th>Nome</th>
-            <th>Nacionalidade</th>
-            <th>Edita</th>
-            <th>Remove</th>
+            <th>Telefone</th>
         </tr>
-        {% for a in autores %}
+        {% for c in clientes %}
         <tr>
-            <td>{{a.nome}}</td>
-            <td>{{a.nacionalidade}}</td>
-            <td><a href="/autores/edita/{{a.id}}">Editar</a></td>
-            <td><a href="/autores/remove/{{a.id}}">Remover</a></td>
+            <td>{{c.nome}}</td>
+            <td>{{c.telefone}}</td>
         </tr>
         {% endfor %}
     </table>

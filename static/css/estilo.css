@@ -6,86 +6,51 @@
 }
 
 :root {
-    --black: #000;
+    --primary: #FDAE02;
+    --secondary: #5A5F64;
+    --alert: #ff0000;
     --white: #fff;
-    --rosa: #fa8acf;
-    --rosa2: #ffdef3;
-    --rosa3: #fcbee4;
-    --rosa4: #ff009d;
+    --black: #000;
 }
 
 header{
     height: 8rem;
-    background-color: var(--rosa);
+    background-color: var(--primary);
     background-size: auto;
     opacity: 80%;
 }
 
 header div{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    padding-top: 1rem;
-}
-
-header img{
-    width: 5rem;
-}
-
-header h1{
-    padding-left: 1rem;
-    color: var(--white);
-    text-shadow: 2px 2px var(--black);
 }
 
 .inicio{
     display: flex;
-    justify-content: center;
-    padding-top: 2rem;
+    justify-content: left;
+    padding-left: 2rem;
+    font-size: 5rem;
 }
 
-.links_nav{
-    background-image: radial-gradient(#ff66c4, #ffffff);
-    text-shadow: 1px 1px var(--black);
-    padding-left: 35rem;
-    padding-right: 35rem;
-    height: 2.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header div img{
+    padding-left: 2rem;
+    width: 7rem;
 }
 
 .links_nav a{
-    padding-top: 0.1rem;
     text-decoration: none;
-    font-size: 1.7rem;
-    color: var(--white);
-    align-items: center;
+    font-size: 2rem;
+    color: var(--black);
+    padding-left: 7rem;
 }
 
 main{
-    padding-top: 6.5rem;
-    background-color: var(--rosa2);
-    background-image: url("../imagens/estrelas.gif");
     min-height: calc(100vh - 13.2rem);
     background-size: auto;
+    padding-top: 2rem;
 }
 
-.main{
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
-
-.main section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main img{
-    width: 18rem;
-}
 
 /* Formulários */
 
@@ -94,9 +59,6 @@ form{
 }
 
 fieldset{
-    border: 2px solid #5367fd;
-    border-radius: 0.5rem;
-    background-image: radial-gradient(#9ca8ff, #ffffff);
     width: fit-content;
     height: fit-content;
     flex-direction: column;
@@ -145,16 +107,6 @@ input{
     border-radius: 0.2rem;
 }
 
-input:hover{
-    display: block;
-    background-image: radial-gradient(#45ff45, #ffffff);
-    border-radius: 0.2rem;
-}
-
-button:hover{
-    background-image: radial-gradient(#45ff45, #ffffff);
-    border-radius: 0.2rem;
-}
 
 
 /* Tabelas */
@@ -182,7 +134,6 @@ table, tr, td, th{
     border-collapse: collapse;
     background-color: var(--rosa3);
     padding: 0.7rem ;
-
 }
 
 table{
@@ -202,14 +153,58 @@ table tr td a{
     width: 15rem;
 }
 
-footer{
-    background-image: radial-gradient(#ff66c4, #ffffff);
-    height: 3rem;
-    color: var(--white);
-    text-shadow: 0.5px 0.5px var(--black);
-    font-size: 1.7rem;
-    align-items: center;
-    justify-content: end;
-    padding-right: 4rem;
+.lixeira img{
+    width: 3rem;
+}
+
+
+
+
+
+
+
+
+header div img{
+    padding-left: 2rem;
+    width: 7rem;
+}
+    height: 7rem;
+}
+
+header nav{
     display: flex;
+    align-items: center;
+}
+
+header nav a{
+    margin: 0 1.5rem;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+}
+
+main div{
+    display: flex;
+}
+
+main div a{
+    background-color: var(--secondary);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--black);
+}
+
+main table, main tr, main tr th, main tr td{
+    border-collapse: collapse;
+    border: 1px solid var(--black);
+} 
+
+main table{
+    width: 100%;
+}
+
+main form div{
+    display: grid;
+    grid-template-columns: 5rem auto;
 }

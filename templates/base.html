@@ -8,24 +8,19 @@
 </head>
 <body>
     <header>
-        <div>
-            <a href="/"><img src="../static/imagens/hello_kitty.png" alt="hello_kitty"></a>
-            <h1>Autores e Livros</h1>
+        <div class="header">
+            <a href="/"><img src="../static/imagens/bug.png" alt="bug"></a>
+            <div class="links_nav">
+                <a href="/clientes"><b>Clientes</b></a>
+                <a href="/reclamacoes"><b>Reclamações</b></a>
+            </div>
         </div>
-
     </header>
-    <div class="links_nav">
-        <a href="/autores"><b>Autores</b></a>
-        <a href="/livros"><b>Livros</b></a>
-    </div>
     <main>
         <div class="conteudo">
             {% block conteudo %}
             {% endblock %}
         </div>
     </main>
-    <footer>
-        <p>© copyleft</p>
-    </footer>
 </body>
 </html>
