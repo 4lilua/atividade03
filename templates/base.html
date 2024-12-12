@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Print</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><img src="/static/imagens/cruz.png" alt="cruz_vermelha"></a>
+           <a href="/autores">Autores</a>
+           <a href="/livros">Livros</a>
+        </nav>
+    </header>
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+    <footer>
+        <h1> &#169 copyleft</h1>
+    </footer>
+</body>
+</html>

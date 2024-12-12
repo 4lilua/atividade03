@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form class="paci_edita" action="/autores/editasave" method="post">
+        <fieldset>
+            <input type="hidden" name="id" value="{{dados.id}}">
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" value="{{dados.nome}}" required>
+            </div>
+            <div>
+                <label for="nacionalidade">Nacionalidade: </label>
+                <input type="text" name="nacionalidade" id="nacionalidade" value="{{dados.nacionalidade}}" required>
+            </div>
+            <button type="submit">Salvar</button>
+        </fieldset>
+    </form>
+
+{% endblock %}
+

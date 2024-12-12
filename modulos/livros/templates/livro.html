@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="tb_med">
+
+
+
+        <div class="add">
+            <a href="/livros/add">Adicionar</a>
+        </div>
+            <table>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Ano Publicação</th>
+                    <th>Autor</th>
+                    <th>Edita</th>
+                    <th>Remove</th>
+                </tr>
+                {% for l in livros %}
+                <tr>
+                    <td>{{l.nome}}</td>
+                    <td>{{l.ano_publicacao}}</td>
+                    <td>{{l.autor.nome}}</td>
+                    <td><a href="/livros/edita/{{l.id}}">Editar</a></td>
+                    <td><a href="/livros/remove/{{l.id}}">Remover</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% set mensagens = get_flashed_messages() %}
+        {% if mensagens %}
+            {% for msg in mensagens %}
+                <div class="msg">
+                    {{ msg }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}
