@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-<div class="tb_med">
-
-
+<div class="table">
 
         <div class="add">
             <a href="/livros/add">Adicionar</a>
@@ -18,7 +16,7 @@
                 </tr>
                 {% for l in livros %}
                 <tr>
-                    <td>{{l.nome}}</td>
+                    <td>{{l.titulo}}</td>
                     <td>{{l.ano_publicacao}}</td>
                     <td>{{l.autor.nome}}</td>
                     <td><a href="/livros/edita/{{l.id}}">Editar</a></td>

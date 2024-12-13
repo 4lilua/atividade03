@@ -5,10 +5,10 @@
     outline: 0;
 }
 :root {
-    --primary: #ff0000;
-    --secondary: #ddfffc;
-    --terciary: #89a5a3;
-    --black_trans: #00000080;
+    --primary: #ffc0e3;
+    --secondary:  #fde2f1;
+    --terciary:#ff6bbc;
+    --quaternary: #e92591;
     --black: #000000;
     --White: #ffffff;
 }
@@ -17,36 +17,49 @@
 
 header{
     display: flex;
-    background-color: var(--secondary);
-    justify-content: left;
-    align-items: center;
-    border: var(--black_trans);
-    border-bottom-width: 0.5rem ;
-    border-bottom-style: solid;
-    height: 4rem;
-}
-
-header img{
-    width: 2rem;
-}
-
-header nav{
-    display: flex;
-    align-items: center;
+    background-color: var(--primary);
     justify-content: center;
+    align-items: center;
+    height: 7rem;
 }
 
-header nav a{
-    font-size: 2rem;
-    margin: 0 1rem;
-    color: var(--black_trans);
+header h1{
+    text-shadow: 1.5px 1.5px var(--black);
+    color: var(--White);
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+header a img{
+    width: 6rem;
+    padding-left: 1rem;
+}
+
+nav{
+    background-image: radial-gradient(#ff6bbc, #ffffff);
+    height: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 42rem;
+    padding-left: 42rem;
+}
+
+nav a{
     text-decoration: none;
+    font-size: 1.7rem;
+    text-shadow: 1px 1px var(--black);
+    color: var(--White);
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 header nav a:hover{
     font-weight: bold;
-    color: rgb(0, 113, 165);
+    color: rgb(233, 37, 145);
 }
+
 
 /*Main*/
 
@@ -54,10 +67,10 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--white);
-    min-height: calc(100vh - 7rem);
+    background-color: var(--secondary);
+    background-image: url("../imagens/brilho2.gif");
+    min-height: calc(100vh - 12.2rem);
 }
-
 
 .index{
     font-size: 2rem;
@@ -66,14 +79,20 @@ main{
     justify-content: center;
 }
 
-
-main img{
-    width: 5rem;
+main div img{
+    width: 15rem;
 }
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /*Main Tabelas*/
 
-.tb_med{
+.table{
     display: block;
     align-items: center;
     justify-content: center;
@@ -97,18 +116,23 @@ main img{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--terciary);
+    color: var(--quaternary);
     margin: 1rem;
     font-size: 2rem;
 }
 
 table, tr, td, th{
-    border: 2px solid var(--terciary);
+    border: 2px solid var(--quaternary);
     border-collapse: collapse;
     padding-left: 1rem;
     padding-right: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: var(--secondary);
+}
+
+table tr td a{
+    color: var(--black);
+    text-decoration: none;
 }
 
 table {
@@ -116,11 +140,8 @@ table {
     margin: auto;
 }
 
-/*Formularios*/
 
-form{
-    padding-top: 5rem;
-}
+/*Formularios*/
 
 fieldset{
     width: fit-content;
@@ -129,36 +150,51 @@ fieldset{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
+    border: 2px solid var(--quaternary);
+    align-items: center;
+    padding-bottom: 0.5rem;
+    background-color: var(--secondary);
 }
 
 fieldset div{
-    padding: 0.5rem;
+    padding: 0.7rem;
     display: flex;
-    justify-content: left;
-    align-items: end;
-    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 fieldset div input{
-    height: 2rem;
+    height: 1.5rem;
+}
+
+input:hover{
+    background-image: radial-gradient(#ff6bbc, #ffffff);
+    border-radius: 0.2rem;
+}
+
+button{
+    width: 4rem;
+    height: 1.5rem;
+}
+
+button:hover{
+    background-image: radial-gradient(#ff6bbc, #ffffff);
+    border-radius: 0.2rem;
 }
 
 
 /*Footer*/
 
 footer{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    background-color: var(--secondary);
-    border: var(--black_trans);
-    border-top-width: 0.5rem ;
-    border-top-style: solid;
+    background-image: radial-gradient(#ff6bbc, #ffffff);
     height: 3rem;
-}
-
-footer h1{
-    color: var(--black);
-    font-size: 2rem;
+    text-shadow: 1.5px 1.5px var(--black);
+    color: var(--White);
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    display: flex;
+    padding-left: 1.5rem;
 }

@@ -12,7 +12,7 @@ def index():
 @bp_livro.route('/add')
 def add():
     a = Autores.query.all()
-    return render_template('autor_add.html', autores = a)
+    return render_template('livro_add.html', autores = a)
 
 @bp_livro.route('/save', methods=['POST'])
 def save():
@@ -23,7 +23,7 @@ def save():
         bd_livro = Livros(titulo, ano_publicacao, id_autor)
         db.session.add(bd_livro)
         db.session.commit()
-        flash('Projeto salvo com sucesso!!!')
+        flash('Livro salvo com sucesso!!!')
         return redirect('/livros')
     else:
         flash('Preencha todos os campos!!!')
@@ -35,7 +35,7 @@ def remove(id):
     if id > 0:
         db.session.delete(dados)
         db.session.commit()
-        flash('Medicamento removido com sucesso!')
+        flash('Livro removido com sucesso!')
         return redirect("/livros")
     else:
         flash("Caminho incorreto!")
@@ -45,7 +45,7 @@ def remove(id):
 def edita(id):
     livro = Livros.query.get(id)
     autor = Autores.query.all()
-    return render_template("livro_add.html", dados=livro, paciente=autor)
+    return render_template("livro_edita.html", dados=livro, autor=autor)
 
 @bp_livro.route("/editasave", methods=['POST'])
 def editasave():
